@@ -1,0 +1,104 @@
+<div class="container">
+  <h1>Welcome to your favourite Book Store</h1>
+  <div class="registration">
+    <div class="membership">
+      <button class="button" (click)="onRegister()" type="button">Register</button>
+      <p>Don't have an account yet?</p>
+    </div>
+    <div class="membership">
+      <button class="button" (click)="onLogin()" type="button">Login</button>
+      <p>Already have an account?</p>
+    </div>
+  </div>
+  <div class="for-dev">
+    <h3>
+      Registration link for developers
+    </h3>
+    <button class="button" (click)="onApiRegister()" type="button">Api User Registration</button>
+  </div>
+</div>
+
+<style>
+  .container {
+    width: 700px;
+    margin: 50px auto;
+    color: #001F5B;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    background: #FFF;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding : 25px;
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: 600;
+    width : 70%;
+    margin : 0;
+  }
+
+  .registration {
+    display : flex;
+    justify-content : space-between;
+    gap : 50px;
+
+  }
+
+  @media and (max-width : 768px){
+    .registration {
+      flex-direction : column;
+    }
+  }
+
+  .registration button {
+    width :300px;
+  }
+
+  .membership {
+    display : flex;
+    flex-direction : column;
+    gap : 10px
+  }
+  .membersip p {
+    font-size : 6px;
+  }
+
+  .for-dev {
+    margin-top : 50px;
+    display : flex;
+    align-items : center;
+  }
+
+    .for-dev button {
+      border: none;
+      background: none;
+      color: #001F5B;
+      text-decoration : underline;
+      padding : 0px;
+      margin : 0px;
+    }
+
+  .button {
+    width: 300px;
+    height: 44px;
+    background: #0096FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFF;
+    border: none;
+    margin-top: 25px;
+    border-radius: 4px;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>

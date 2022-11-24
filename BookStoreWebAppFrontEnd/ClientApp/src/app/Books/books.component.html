@@ -1,0 +1,73 @@
+<div class="container">
+  <div>
+    <h1 id="tableLabel">Books Available</h1>
+
+    <p *ngIf="!books"><em>Loading...</em></p>
+
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="books">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>PurchasePrice</th>
+          <th>Subscribe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.description }}</td>
+          <td>{{ book.category }}</td>
+          <td>{{ book.purchasePrice }}</td>
+          <td> <button class="button" (click)="subBook(book)" type="button">Subscribe</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h1 id="tableLabel">Your Subscribed Books</h1>
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="subscribedBooks">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>PurchasePrice</th>
+          <th>Subscribe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subBook of subscribedBooks">
+          <td>{{ subBook.name }}</td>
+          <td>{{ subBook.author }}</td>
+          <td>{{ subBook.description }}</td>
+          <td>{{ subBook.category }}</td>
+          <td>{{ subBook.purchasePrice }}</td>
+          <td> <button class="button" (click)="unsubBook(subBook)" type="button">Subscribed</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<style>
+  .container {
+    color: #001F5B;
+    display: flex;
+    flex-direction : column;
+    gap: 80px;
+    padding : 50px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom : 30px;
+  }
+
+</style>
